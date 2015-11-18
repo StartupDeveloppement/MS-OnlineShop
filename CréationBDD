@@ -1,0 +1,410 @@
+/*
+ ----------------------------------------------------------------------------
+             Génération d'une base de données pour
+                      Microsoft SQL Server
+                       (18/11/2015 16:49:43)
+ ----------------------------------------------------------------------------
+     Nom de la base : BDDHW
+     Projet : 
+     Auteur : Beulaygue
+     Date de dernière modification : 18/11/2015 16:48:33
+ ----------------------------------------------------------------------------
+*/
+
+drop database BDDHW
+go
+
+/* -----------------------------------------------------------------------------
+      OUVERTURE DE LA BASE BDDHW
+----------------------------------------------------------------------------- */
+
+create database BDDHW
+go
+
+use BDDHW
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : PRODUIT_SOCIETE
+----------------------------------------------------------------------------- */
+
+create table PRODUIT_SOCIETE
+(
+     ID_SOCIETE int not null,
+     ID_PRODUIT int not null,
+     ID_PRODUIT_SOCIETE int ,
+     ETAT_PRODUIT char(32) ,
+     PRIX_PRODUIT_SOCIETE money ,
+     STOCK_PRODUIT_SOCIETE bigint ,
+     DELAI_LIVRAISON_PRODUIT_SOCIET char(32) 
+)
+go
+
+
+
+/*      INDEX DE PRODUIT_SOCIETE      */
+
+
+sp_primarykey PRODUIT_SOCIETE, ID_SOCIETE, ID_PRODUIT, ID_PRODUIT_SOCIETE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : PAIEMENT
+----------------------------------------------------------------------------- */
+
+create table PAIEMENT
+(
+     ID_PAIEMENT int ,
+     ID_UTILISATEUR int ,
+     TYPE_CARTE_PAIEMENT char(32) ,
+     NUMERO_CARTE_PAIEMENT bigint ,
+     CODE_CARTE_PAIEMENT int ,
+     NOM_TITULAIRE_CARTE_PAIEMENT char(32) ,
+     PRENOM_TITULAIRE_CARTE_PAIEMEN char(32) ,
+     DATE_VALIDITE_CARTE_PAIEMENT datetime ,
+     ADR_FACTURATION char(32) 
+)
+go
+
+
+
+/*      INDEX DE PAIEMENT      */
+
+
+sp_primarykey PAIEMENT, ID_PAIEMENT
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : COMMENTAIRE
+----------------------------------------------------------------------------- */
+
+create table COMMENTAIRE
+(
+     ID_COMMENTAIRE char(32) not null,
+     ID_UTILISATEUR int not null,
+     ID_SOCIETE int not null,
+     ID_PRODUIT int not null,
+     ID_PRODUIT_SOCIETE int not null,
+     ID_SOCIETE_REL_6 int not null,
+     LIBELLE_COMMENTAIRE char(32) ,
+     CONTENU_COMMENTAIRE char(255) ,
+     DATE_COMMENTAIRE timestamp ,
+     DATE_MODIFICATION_COMMENTAIRE timestamp ,
+     NOTE_COMMENTAIRE int 
+)
+go
+
+
+
+/*      INDEX DE COMMENTAIRE      */
+
+
+sp_primarykey COMMENTAIRE, ID_COMMENTAIRE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : IMAGE
+----------------------------------------------------------------------------- */
+
+create table IMAGE
+(
+     ID_IMAGE int ,
+     ID_PRODUIT int not null,
+     TYPE_IMAGE char(32) ,
+     TAILLE_IMAGE char(32) ,
+     CHEMIN_IMAGE char(32) ,
+     ORDRE_IMAGE smallint 
+)
+go
+
+
+
+/*      INDEX DE IMAGE      */
+
+
+sp_primarykey IMAGE, ID_IMAGE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : UTILISATEUR
+----------------------------------------------------------------------------- */
+
+create table UTILISATEUR
+(
+     ID_UTILISATEUR int ,
+     ID_SOCIETE int ,
+     ID_VILLE int ,
+     NOM_UTILISATEUR char(32) ,
+     PRENOM_UTILISATEUR char(32) ,
+     EMAIL_UTILISATEUR char(32) ,
+     MDP_UTILISATEUR char(32) ,
+     DATE_NAISSANCE_UTILISATEUR char(32) ,
+     ADR_UTILISATEUR char(32) ,
+     TYPE_UTILISATEUR char(32) ,
+     DROIT_UTILISATEUR char(32) 
+)
+go
+
+
+
+/*      INDEX DE UTILISATEUR      */
+
+
+sp_primarykey UTILISATEUR, ID_UTILISATEUR
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : COMMANDE
+----------------------------------------------------------------------------- */
+
+create table COMMANDE
+(
+     ID_COMMANDE int ,
+     ID_UTILISATEUR int ,
+     TYPE_COMMANDE char(32) ,
+     DATE_COMMANDE timestamp ,
+     DATE_ESTIME_COMMANDE timestamp ,
+     ADR_LIVRAISON_COMMANDE char(32) ,
+     ETAT_COMMANDE char(32) ,
+     LIEU_ACTUEL_COMMANDE char(32) 
+)
+go
+
+
+
+/*      INDEX DE COMMANDE      */
+
+
+sp_primarykey COMMANDE, ID_COMMANDE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : PAYS
+----------------------------------------------------------------------------- */
+
+create table PAYS
+(
+     ID_PAYS int ,
+     LIBELLE_PAYS char(32) ,
+     CODE_PAYS char(32) 
+)
+go
+
+
+
+/*      INDEX DE PAYS      */
+
+
+sp_primarykey PAYS, ID_PAYS
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : VILLE
+----------------------------------------------------------------------------- */
+
+create table VILLE
+(
+     ID_VILLE int ,
+     ID_PAYS int not null,
+     NOM_VILLE char(32) ,
+     CP_VILLE char(32) 
+)
+go
+
+
+
+/*      INDEX DE VILLE      */
+
+
+sp_primarykey VILLE, ID_VILLE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : SOCIETE
+----------------------------------------------------------------------------- */
+
+create table SOCIETE
+(
+     ID_SOCIETE int ,
+     ID_VILLE int ,
+     LIBELLE_SOCIETE char(32) ,
+     LOGO_SOCIETE char(32) ,
+     NUMSIRET_SOCIETE char(32) ,
+     NUMINTRA_SOCIETE char(32) ,
+     TELEPHONE_SOCIETE char(32) ,
+     FAX_SOCIETE char(32) ,
+     EMAIL_SOCIETE char(32) 
+)
+go
+
+
+
+/*      INDEX DE SOCIETE      */
+
+
+sp_primarykey SOCIETE, ID_SOCIETE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : PRODUIT
+----------------------------------------------------------------------------- */
+
+create table PRODUIT
+(
+     ID_PRODUIT int ,
+     ID_CATEGORIE int ,
+     LIBELLE_PRODUIT char(32) ,
+     DESCRIPTION_PRODUIT char(255) ,
+     DESCRIPTIF_TECHNIQUE_PRODUIT char(255) ,
+     TYPE_PRODUIT char(32) ,
+     MOTCLE_PRODUIT char(32) ,
+     DATE_MISE_EN_LIGNE_PRODUIT datetime 
+)
+go
+
+
+
+/*      INDEX DE PRODUIT      */
+
+
+sp_primarykey PRODUIT, ID_PRODUIT
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : CATEGORIE
+----------------------------------------------------------------------------- */
+
+create table CATEGORIE
+(
+     ID_CATEGORIE int ,
+     LIBELLE_CATEGORIE char(32) 
+)
+go
+
+
+
+/*      INDEX DE CATEGORIE      */
+
+
+sp_primarykey CATEGORIE, ID_CATEGORIE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      TABLE : PRODUIT_COMMANDE
+----------------------------------------------------------------------------- */
+
+create table PRODUIT_COMMANDE
+(
+     ID_COMMANDE int not null,
+     ID_SOCIETE int not null,
+     ID_PRODUIT int not null,
+     ID_PRODUIT_SOCIETE int not null,
+     ETAT_PRODUIT_COMMANDE char(32) 
+)
+go
+
+
+
+/*      INDEX DE PRODUIT_COMMANDE      */
+
+
+sp_primarykey PRODUIT_COMMANDE, ID_COMMANDE, ID_SOCIETE, ID_PRODUIT, ID_PRODUIT_SOCIETE
+go
+
+
+
+/* -----------------------------------------------------------------------------
+      REFRENCES SUR LES TABLES
+----------------------------------------------------------------------------- */
+
+
+sp_foreignkey PRODUIT_SOCIETE, PRODUIT, ID_PRODUIT
+go
+
+
+sp_foreignkey PRODUIT_SOCIETE, SOCIETE, ID_SOCIETE
+go
+
+
+sp_foreignkey PAIEMENT, UTILISATEUR, ID_UTILISATEUR
+go
+
+
+sp_foreignkey COMMENTAIRE, UTILISATEUR, ID_UTILISATEUR
+go
+
+
+sp_foreignkey COMMENTAIRE, PRODUIT_SOCIETE, ID_SOCIETE, ID_PRODUIT, ID_PRODUIT_SOCIETE
+go
+
+
+sp_foreignkey COMMENTAIRE, SOCIETE, ID_SOCIETE_REL_6
+go
+
+
+sp_foreignkey IMAGE, PRODUIT, ID_PRODUIT
+go
+
+
+sp_foreignkey UTILISATEUR, SOCIETE, ID_SOCIETE
+go
+
+
+sp_foreignkey UTILISATEUR, VILLE, ID_VILLE
+go
+
+
+sp_foreignkey COMMANDE, UTILISATEUR, ID_UTILISATEUR
+go
+
+
+sp_foreignkey VILLE, PAYS, ID_PAYS
+go
+
+
+sp_foreignkey SOCIETE, VILLE, ID_VILLE
+go
+
+
+sp_foreignkey PRODUIT, CATEGORIE, ID_CATEGORIE
+go
+
+
+sp_foreignkey PRODUIT_COMMANDE, COMMANDE, ID_COMMANDE
+go
+
+
+sp_foreignkey PRODUIT_COMMANDE, PRODUIT_SOCIETE, ID_SOCIETE, ID_PRODUIT, ID_PRODUIT_SOCIETE
+go
+
+
+
+/*
+ -----------------------------------------------------------------------------
+               FIN DE GENERATION
+ -----------------------------------------------------------------------------
+*/
