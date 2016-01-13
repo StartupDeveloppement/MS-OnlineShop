@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataBaseIShopEntitiesModelStoreContainer" CdmEntityContainer="DataBaseIShopEntities">
+    <EntitySetMapping Name="CATEGORIE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.CATEGORIE">
+        <MappingFragment StoreEntitySet="CATEGORIE">
+          <ScalarProperty Name="ID_CATEGORIE" ColumnName="ID_CATEGORIE" />
+          <ScalarProperty Name="LIBELLE_CATEGORIE" ColumnName="LIBELLE_CATEGORIE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMANDE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.COMMANDE">
+        <MappingFragment StoreEntitySet="COMMANDE">
+          <ScalarProperty Name="ID_COMMANDE" ColumnName="ID_COMMANDE" />
+          <ScalarProperty Name="ID_UTILISATEUR" ColumnName="ID_UTILISATEUR" />
+          <ScalarProperty Name="TYPE_COMMANDE" ColumnName="TYPE_COMMANDE" />
+          <ScalarProperty Name="DATE_COMMANDE" ColumnName="DATE_COMMANDE" />
+          <ScalarProperty Name="DATE_ESTIME_COMMANDE" ColumnName="DATE_ESTIME_COMMANDE" />
+          <ScalarProperty Name="ADR_LIVRAISON_COMMANDE" ColumnName="ADR_LIVRAISON_COMMANDE" />
+          <ScalarProperty Name="ETAT_COMMANDE" ColumnName="ETAT_COMMANDE" />
+          <ScalarProperty Name="LIEU_ACTUEL_COMMANDE" ColumnName="LIEU_ACTUEL_COMMANDE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTAIRE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.COMMENTAIRE">
+        <MappingFragment StoreEntitySet="COMMENTAIRE">
+          <ScalarProperty Name="ID_COMMENTAIRE" ColumnName="ID_COMMENTAIRE" />
+          <ScalarProperty Name="ID_UTILISATEUR" ColumnName="ID_UTILISATEUR" />
+          <ScalarProperty Name="ID_SOCIETE" ColumnName="ID_SOCIETE" />
+          <ScalarProperty Name="ID_PRODUIT" ColumnName="ID_PRODUIT" />
+          <ScalarProperty Name="ID_PRODUIT_SOCIETE" ColumnName="ID_PRODUIT_SOCIETE" />
+          <ScalarProperty Name="ID_SOCIETE_REL_6" ColumnName="ID_SOCIETE_REL_6" />
+          <ScalarProperty Name="LIBELLE_COMMENTAIRE" ColumnName="LIBELLE_COMMENTAIRE" />
+          <ScalarProperty Name="CONTENU_COMMENTAIRE" ColumnName="CONTENU_COMMENTAIRE" />
+          <ScalarProperty Name="DATE_COMMENTAIRE" ColumnName="DATE_COMMENTAIRE" />
+          <ScalarProperty Name="DATE_MODIFICATION_COMMENTAIRE" ColumnName="DATE_MODIFICATION_COMMENTAIRE" />
+          <ScalarProperty Name="NOTE_COMMENTAIRE" ColumnName="NOTE_COMMENTAIRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.IMAGE">
+        <MappingFragment StoreEntitySet="IMAGE">
+          <ScalarProperty Name="ID_IMAGE" ColumnName="ID_IMAGE" />
+          <ScalarProperty Name="ID_PRODUIT" ColumnName="ID_PRODUIT" />
+          <ScalarProperty Name="TYPE_IMAGE" ColumnName="TYPE_IMAGE" />
+          <ScalarProperty Name="TAILLE_IMAGE" ColumnName="TAILLE_IMAGE" />
+          <ScalarProperty Name="CHEMIN_IMAGE" ColumnName="CHEMIN_IMAGE" />
+          <ScalarProperty Name="ORDRE_IMAGE" ColumnName="ORDRE_IMAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAIEMENT">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.PAIEMENT">
+        <MappingFragment StoreEntitySet="PAIEMENT">
+          <ScalarProperty Name="ID_PAIEMENT" ColumnName="ID_PAIEMENT" />
+          <ScalarProperty Name="ID_UTILISATEUR" ColumnName="ID_UTILISATEUR" />
+          <ScalarProperty Name="TYPE_CARTE_PAIEMENT" ColumnName="TYPE_CARTE_PAIEMENT" />
+          <ScalarProperty Name="NUMERO_CARTE_PAIEMENT" ColumnName="NUMERO_CARTE_PAIEMENT" />
+          <ScalarProperty Name="CODE_CARTE_PAIEMENT" ColumnName="CODE_CARTE_PAIEMENT" />
+          <ScalarProperty Name="NOM_TITULAIRE_CARTE_PAIEMENT" ColumnName="NOM_TITULAIRE_CARTE_PAIEMENT" />
+          <ScalarProperty Name="PRENOM_TITULAIRE_CARTE_PAIEMENT" ColumnName="PRENOM_TITULAIRE_CARTE_PAIEMENT" />
+          <ScalarProperty Name="DATE_VALIDITE_CARTE_PAIEMENT" ColumnName="DATE_VALIDITE_CARTE_PAIEMENT" />
+          <ScalarProperty Name="ADR_FACTURATION" ColumnName="ADR_FACTURATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYS">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.PAYS">
+        <MappingFragment StoreEntitySet="PAYS">
+          <ScalarProperty Name="ID_PAYS" ColumnName="ID_PAYS" />
+          <ScalarProperty Name="LIBELLE_PAYS" ColumnName="LIBELLE_PAYS" />
+          <ScalarProperty Name="CODE_PAYS" ColumnName="CODE_PAYS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUIT">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.PRODUIT">
+        <MappingFragment StoreEntitySet="PRODUIT">
+          <ScalarProperty Name="ID_PRODUIT" ColumnName="ID_PRODUIT" />
+          <ScalarProperty Name="ID_CATEGORIE" ColumnName="ID_CATEGORIE" />
+          <ScalarProperty Name="LIBELLE_PRODUIT" ColumnName="LIBELLE_PRODUIT" />
+          <ScalarProperty Name="DESCRIPTION_PRODUIT" ColumnName="DESCRIPTION_PRODUIT" />
+          <ScalarProperty Name="DESCRIPTIF_TECHNIQUE_PRODUIT" ColumnName="DESCRIPTIF_TECHNIQUE_PRODUIT" />
+          <ScalarProperty Name="TYPE_PRODUIT" ColumnName="TYPE_PRODUIT" />
+          <ScalarProperty Name="MOTCLE_PRODUIT" ColumnName="MOTCLE_PRODUIT" />
+          <ScalarProperty Name="DATE_MISE_EN_LIGNE_PRODUIT" ColumnName="DATE_MISE_EN_LIGNE_PRODUIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUIT_COMMANDE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.PRODUIT_COMMANDE">
+        <MappingFragment StoreEntitySet="PRODUIT_COMMANDE">
+          <ScalarProperty Name="ID_COMMANDE" ColumnName="ID_COMMANDE" />
+          <ScalarProperty Name="ID_SOCIETE" ColumnName="ID_SOCIETE" />
+          <ScalarProperty Name="ID_PRODUIT" ColumnName="ID_PRODUIT" />
+          <ScalarProperty Name="ID_PRODUIT_SOCIETE" ColumnName="ID_PRODUIT_SOCIETE" />
+          <ScalarProperty Name="ETAT_PRODUIT_COMMANDE" ColumnName="ETAT_PRODUIT_COMMANDE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUIT_SOCIETE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.PRODUIT_SOCIETE">
+        <MappingFragment StoreEntitySet="PRODUIT_SOCIETE">
+          <ScalarProperty Name="ID_SOCIETE" ColumnName="ID_SOCIETE" />
+          <ScalarProperty Name="ID_PRODUIT" ColumnName="ID_PRODUIT" />
+          <ScalarProperty Name="ID_PRODUIT_SOCIETE" ColumnName="ID_PRODUIT_SOCIETE" />
+          <ScalarProperty Name="ETAT_PRODUIT" ColumnName="ETAT_PRODUIT" />
+          <ScalarProperty Name="PRIX_PRODUIT_SOCIETE" ColumnName="PRIX_PRODUIT_SOCIETE" />
+          <ScalarProperty Name="STOCK_PRODUIT_SOCIETE" ColumnName="STOCK_PRODUIT_SOCIETE" />
+          <ScalarProperty Name="DELAI_LIVRAISON_PRODUIT_SOCIETE" ColumnName="DELAI_LIVRAISON_PRODUIT_SOCIETE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIETE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.SOCIETE">
+        <MappingFragment StoreEntitySet="SOCIETE">
+          <ScalarProperty Name="ID_SOCIETE" ColumnName="ID_SOCIETE" />
+          <ScalarProperty Name="ID_VILLE" ColumnName="ID_VILLE" />
+          <ScalarProperty Name="LIBELLE_SOCIETE" ColumnName="LIBELLE_SOCIETE" />
+          <ScalarProperty Name="LOGO_SOCIETE" ColumnName="LOGO_SOCIETE" />
+          <ScalarProperty Name="NUMSIRET_SOCIETE" ColumnName="NUMSIRET_SOCIETE" />
+          <ScalarProperty Name="NUMINTRA_SOCIETE" ColumnName="NUMINTRA_SOCIETE" />
+          <ScalarProperty Name="TELEPHONE_SOCIETE" ColumnName="TELEPHONE_SOCIETE" />
+          <ScalarProperty Name="FAX_SOCIETE" ColumnName="FAX_SOCIETE" />
+          <ScalarProperty Name="EMAIL_SOCIETE" ColumnName="EMAIL_SOCIETE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UTILISATEUR">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.UTILISATEUR">
+        <MappingFragment StoreEntitySet="UTILISATEUR">
+          <ScalarProperty Name="ID_UTILISATEUR" ColumnName="ID_UTILISATEUR" />
+          <ScalarProperty Name="ID_SOCIETE" ColumnName="ID_SOCIETE" />
+          <ScalarProperty Name="ID_VILLE" ColumnName="ID_VILLE" />
+          <ScalarProperty Name="NOM_UTILISATEUR" ColumnName="NOM_UTILISATEUR" />
+          <ScalarProperty Name="PRENOM_UTILISATEUR" ColumnName="PRENOM_UTILISATEUR" />
+          <ScalarProperty Name="EMAIL_UTILISATEUR" ColumnName="EMAIL_UTILISATEUR" />
+          <ScalarProperty Name="MDP_UTILISATEUR" ColumnName="MDP_UTILISATEUR" />
+          <ScalarProperty Name="DATE_NAISSANCE_UTILISATEUR" ColumnName="DATE_NAISSANCE_UTILISATEUR" />
+          <ScalarProperty Name="ADR_UTILISATEUR" ColumnName="ADR_UTILISATEUR" />
+          <ScalarProperty Name="TYPE_UTILISATEUR" ColumnName="TYPE_UTILISATEUR" />
+          <ScalarProperty Name="DROIT_UTILISATEUR" ColumnName="DROIT_UTILISATEUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VILLE">
+      <EntityTypeMapping TypeName="DataBaseIShopEntitiesModel.VILLE">
+        <MappingFragment StoreEntitySet="VILLE">
+          <ScalarProperty Name="ID_VILLE" ColumnName="ID_VILLE" />
+          <ScalarProperty Name="ID_PAYS" ColumnName="ID_PAYS" />
+          <ScalarProperty Name="NOM_VILLE" ColumnName="NOM_VILLE" />
+          <ScalarProperty Name="CP_VILLE" ColumnName="CP_VILLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
