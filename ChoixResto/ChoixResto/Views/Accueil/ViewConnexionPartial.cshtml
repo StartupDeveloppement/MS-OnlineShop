@@ -1,0 +1,25 @@
+﻿<!-- Si on utilise un model ou viewModel -->
+@model ChoixResto.ViewModels.AccueilViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewConnexionPartial</title>
+</head>
+<body>
+    <div>
+        <!-- Utilisation de vue partielle -->
+        @Html.Partial("Connexion")
+        <!-- Si dans un autre dossier de vue -->
+        @Html.Partial("../Accueil/Connexion")
+        @Html.Partial("~/Views/Accueil/Connexion.cshtml")
+        <!-- Si on utilise un model ou viewModel-->
+        @Html.Partial("Connexion", Model) 
+    </div>
+</body>
+</html>

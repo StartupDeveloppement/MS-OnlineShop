@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p>Je suis la vue index</p>
+        <ul>
+            <li>@ViewData["message"]</li>
+            <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+            <li>@(((ChoixResto.Models.Resto)ViewData["resto"]).Nom)</li>
+            <li>@(((ChoixResto.Models.Resto)ViewData["resto"]).Telephone)</li>
+        </ul>
+        <!-- Ou --> 
+        <ul>
+            <li>@ViewData["message"]</li>
+            <li>@(((DateTime)ViewData["date"]).ToString("dd/MM/yyyy"))</li>
+            @{
+                ChoixResto.Models.Resto resto = (ChoixResto.Models.Resto)ViewData["resto"];
+            }
+            <li>@resto.Nom</li>
+            <li>@resto.Telephone</li>
+        </ul>
+        <!-- Avec ViewBag qui est de type dynamic (permet de prendre n'importe quel type) -->
+        <ul>
+            <li>@ViewBag.message</li>
+            <li>@ViewBag.date.ToString("dd/MM/yyyy")</li>
+            <li>@ViewBag.resto.Nom</li>
+            <li>@ViewBag.resto.Telephone</li>
+        </ul>
+        <div>
+            @Html.Action("AfficheListeRestaurant")
+        </div>
+    </div>
+</body>
+</html>

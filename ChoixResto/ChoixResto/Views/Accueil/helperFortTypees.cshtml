@@ -1,0 +1,27 @@
+﻿@model ChoixResto.Models.Resto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>helperFortTypees</title>
+</head>
+<body>
+    <div>
+        <p>Les helpers fortements typées</p>
+        @using (Html.BeginForm("L'action","Le contrôleur"))
+        {
+            @Html.LabelFor(model => model.Telephone) // (model => model.Resto.Telephone) : si ViewModel car on a une propirété resto
+            @Html.TextBoxFor(model => model.Telephone)
+            <input type="submit" value="Envoyer" />
+        }
+        @Html.ActionLink("Modifier le restaurant", "ModifierRestaurant", "Restaurant")
+        @Html.ActionLink("Modifier le restaurant", "ModifierRestaurant", "Restaurant", new { id = Model.Id }, null)
+        @Html.ActionLink("Label vue par l'utilisateur", "Méthode du contrôleur", "paramètre 1")
+    </div>
+</body>
+</html>

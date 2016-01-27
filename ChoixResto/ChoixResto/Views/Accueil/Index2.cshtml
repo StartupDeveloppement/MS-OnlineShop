@@ -1,0 +1,24 @@
+﻿@model ChoixResto.Models.Resto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div>
+        <p>AVec liaison au model</p>
+        <ul>
+            <li>@ViewBag.message</li>
+            <li>@ViewBag.date.ToString("dd/MM/yyyy")</li>
+            <li>@Model.Nom</li>
+            <li>@Model.Telephone</li>
+        </ul> 
+    </div>
+</body>
+</html>

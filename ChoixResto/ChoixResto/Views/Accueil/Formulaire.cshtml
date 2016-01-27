@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formulaire</title>
+</head>
+<body>
+    <div>
+        <!-- Première méthode -->
+        <div>Je suis la vue index</div>
+        @{Html.BeginForm("Index", "Home");}
+        @Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
+        @Html.CheckBox("estMajeur", true)
+        <input type="submit" value="Envoyer" />
+        @{Html.EndForm();}
+        <!-- Deuxième méthode -->
+        <div>Je suis la vue index</div>
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            @Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
+            @Html.CheckBox("estMajeur", true)
+            <input type="submit" value="Envoyer" />
+        } 
+    </div>
+</body>
+</html>
