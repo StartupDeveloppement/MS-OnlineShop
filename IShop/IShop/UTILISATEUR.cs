@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace IShop
 {
     using System;
@@ -27,7 +30,9 @@ namespace IShop
         public Nullable<short> ID_VILLE { get; set; }
         public string NOM_UTILISATEUR { get; set; }
         public string PRENOM_UTILISATEUR { get; set; }
+        [Display(Name = "Email")]
         public string EMAIL_UTILISATEUR { get; set; }
+        [Display(Name = "Mot de passe")]
         public string MDP_UTILISATEUR { get; set; }
         public string DATE_NAISSANCE_UTILISATEUR { get; set; }
         public string ADR_UTILISATEUR { get; set; }

@@ -194,6 +194,7 @@
       <DependentUpon>DataBaseIShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Dal.cs" />
     <Compile Include="PAIEMENT.cs">
       <DependentUpon>DataBaseIShopModel.tt</DependentUpon>
     </Compile>

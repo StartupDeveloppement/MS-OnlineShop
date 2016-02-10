@@ -23,17 +23,42 @@ namespace IShop.Controllers
         }
         public ActionResult Connexion(UTILISATEUR utilisateur)
         {
-            bool result;
+            UTILISATEUR user;
+            string typeUser;
+
             Models.AccountModels accountModels = new Models.AccountModels();
-            result = accountModels.Login(utilisateur.EMAIL_UTILISATEUR, utilisateur.MDP_UTILISATEUR);
-            if (result)
+            user = accountModels.Login(utilisateur);
+            typeUser = user.TYPE_UTILISATEUR;
+            switch (typeUser.Trim())
             {
-                return View("Register");
+                case "Admin":
+                    return Content("Connecté en mode admin" + user.EMAIL_UTILISATEUR + ", " + user.MDP_UTILISATEUR + ", " + user.TYPE_UTILISATEUR);
+                    break;
+                case "Vendeur":
+                    return Content("Connecté en mode vendeur" + user.EMAIL_UTILISATEUR + ", " + user.MDP_UTILISATEUR + ", " + user.TYPE_UTILISATEUR);
+                    break;
+                case "Client":
+                    return Content("Connecté en mode client" + user.EMAIL_UTILISATEUR + ", " + user.MDP_UTILISATEUR + ", " + user.TYPE_UTILISATEUR);
+                    break;
+                default:
+                    return Content(":/" + user.EMAIL_UTILISATEUR + ", " + user.MDP_UTILISATEUR + ", " + user.TYPE_UTILISATEUR);
+                    break;
             }
-            else
+            
+        }
+       
+        public ActionResult creerUtilisateur(UTILISATEUR utilisateur)
+        {
+            Models.AccountModels accountModels = new Models.AccountModels();
+            if (accountModels.UtilisateurExiste(utilisateur))
             {
-                return View("Login");
+                ModelState.AddModelError("Email", "Cet email est déjà utilisé");
+                return View(utilisateur);
             }
+            if (!ModelState.IsValid)
+                return View(utilisateur);
+            accountModels.CreerUtilisateur(utilisateur);
+            return Content("Connecté en mode client");
         }
     }
 }
