@@ -1,0 +1,98 @@
+﻿@model IShop.UTILISATEUR
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UTILISATEUR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRENOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRENOM_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDP_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDP_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_NAISSANCE_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_NAISSANCE_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADR_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADR_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DROIT_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DROIT_UTILISATEUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VILLE.NOM_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VILLE.NOM_VILLE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_UTILISATEUR }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

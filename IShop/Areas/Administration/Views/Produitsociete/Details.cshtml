@@ -1,0 +1,66 @@
+﻿@model IShop.PRODUIT_SOCIETE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUIT_SOCIETE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ETAT_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETAT_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRIX_PRODUIT_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRIX_PRODUIT_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STOCK_PRODUIT_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK_PRODUIT_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DELAI_LIVRAISON_PRODUIT_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DELAI_LIVRAISON_PRODUIT_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUIT.LIBELLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUIT.LIBELLE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

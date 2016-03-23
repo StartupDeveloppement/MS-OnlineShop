@@ -1,0 +1,58 @@
+﻿@model IShop.IMAGE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IMAGE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_IMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_IMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAILLE_IMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAILLE_IMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHEMIN_IMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHEMIN_IMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDRE_IMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDRE_IMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUIT.LIBELLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUIT.LIBELLE_PRODUIT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_IMAGE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,80 @@
+﻿@model IShop.COMMANDE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>COMMANDE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_ESTIME_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_ESTIME_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADR_LIVRAISON_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADR_LIVRAISON_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ETAT_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETAT_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIEU_ACTUEL_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIEU_ACTUEL_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

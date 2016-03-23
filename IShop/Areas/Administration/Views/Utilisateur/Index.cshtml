@@ -1,0 +1,87 @@
+﻿@model IEnumerable<IShop.UTILISATEUR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRENOM_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDP_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_NAISSANCE_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADR_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DROIT_UTILISATEUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VILLE.NOM_VILLE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRENOM_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MDP_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_NAISSANCE_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADR_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DROIT_UTILISATEUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOCIETE.LIBELLE_SOCIETE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VILLE.NOM_VILLE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_UTILISATEUR }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_UTILISATEUR }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_UTILISATEUR })
+        </td>
+    </tr>
+}
+
+</table>

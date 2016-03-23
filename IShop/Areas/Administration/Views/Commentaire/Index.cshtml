@@ -1,0 +1,75 @@
+﻿@model IEnumerable<IShop.COMMENTAIRE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LIBELLE_COMMENTAIRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTENU_COMMENTAIRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_COMMENTAIRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_MODIFICATION_COMMENTAIRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTE_COMMENTAIRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIBELLE_COMMENTAIRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTENU_COMMENTAIRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_COMMENTAIRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_MODIFICATION_COMMENTAIRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTE_COMMENTAIRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOCIETE.LIBELLE_SOCIETE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UTILISATEUR.NOM_UTILISATEUR)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_COMMENTAIRE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_COMMENTAIRE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_COMMENTAIRE })
+        </td>
+    </tr>
+}
+
+</table>

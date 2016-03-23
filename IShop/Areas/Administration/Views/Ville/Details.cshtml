@@ -1,0 +1,42 @@
+﻿@model IShop.VILLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VILLE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_VILLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CP_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CP_VILLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAYS.LIBELLE_PAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAYS.LIBELLE_PAYS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_VILLE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,74 @@
+﻿@model IShop.PRODUIT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUIT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LIBELLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIBELLE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTCLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTCLE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_MISE_EN_LIGNE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_MISE_EN_LIGNE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEGORIE.LIBELLE_CATEGORIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORIE.LIBELLE_CATEGORIE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PRODUIT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

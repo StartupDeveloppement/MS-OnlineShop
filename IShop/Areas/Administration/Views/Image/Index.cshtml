@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IShop.IMAGE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_IMAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAILLE_IMAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHEMIN_IMAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDRE_IMAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUIT.LIBELLE_PRODUIT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_IMAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TAILLE_IMAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHEMIN_IMAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDRE_IMAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUIT.LIBELLE_PRODUIT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_IMAGE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_IMAGE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_IMAGE })
+        </td>
+    </tr>
+}
+
+</table>

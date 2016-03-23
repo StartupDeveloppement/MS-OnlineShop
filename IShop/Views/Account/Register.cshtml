@@ -1,0 +1,49 @@
+﻿@model IShop.Models.AccountModels
+@{
+    ViewBag.Title = "Créer un compte";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm("creerUtilisateur", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.utilisateur.EMAIL_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.utilisateur.EMAIL_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.utilisateur.EMAIL_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.utilisateur.MDP_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.utilisateur.MDP_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.utilisateur.MDP_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.utilisateur.NOM_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.utilisateur.NOM_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.utilisateur.NOM_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.utilisateur.PRENOM_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.utilisateur.PRENOM_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.utilisateur.PRENOM_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.utilisateur.ADR_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.utilisateur.ADR_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.utilisateur.ADR_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="S'enregistrer'" class="btn btn-default" />
+        </div>
+    </div>
+}

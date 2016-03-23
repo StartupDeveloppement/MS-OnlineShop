@@ -1,0 +1,39 @@
+﻿@model IEnumerable<IShop.PAYS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LIBELLE_PAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODE_PAYS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIBELLE_PAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE_PAYS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PAYS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PAYS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PAYS })
+        </td>
+    </tr>
+}
+
+</table>

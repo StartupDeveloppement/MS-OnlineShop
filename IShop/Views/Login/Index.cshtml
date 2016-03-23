@@ -1,0 +1,47 @@
+﻿@model IShop.ViewModels.UtilisateurViewModel
+@{
+    ViewBag.Title = "Authentification";
+}
+
+<div>
+    <h2>Connexion</h2>
+    <div>
+        @if (Model.Authentifie)
+        {
+            <h3>
+                Vous êtes déjà authentifié avec le login :
+                @Model.Utilisateur.EMAIL_UTILISATEUR
+            </h3>
+            @Html.ActionLink("Voulez-vous vous déconnecter ?", "Deconnexion")
+        }
+        else
+        {
+            <p>
+                Veuillez vous authentifier :
+            </p>
+            using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Utilisateur.EMAIL_UTILISATEUR, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Utilisateur.EMAIL_UTILISATEUR, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Utilisateur.EMAIL_UTILISATEUR)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Utilisateur.MDP_UTILISATEUR, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Utilisateur.MDP_UTILISATEUR, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Utilisateur.MDP_UTILISATEUR)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Se connecter" />
+                    </div>
+                </div>
+                @Html.ActionLink("Créer un compte", "CreerCompte")
+            }
+        }
+    </div>
+</div>

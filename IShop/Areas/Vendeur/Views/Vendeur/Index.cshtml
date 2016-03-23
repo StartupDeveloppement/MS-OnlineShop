@@ -1,0 +1,81 @@
+﻿@model SOCIETE
+@{
+    ViewBag.Title = "Détail";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SOCIETE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LIBELLE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIBELLE_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOGO_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGO_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMSIRET_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMSIRET_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMINTRA_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMINTRA_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEPHONE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEPHONE_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FAX_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FAX_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VILLE.NOM_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VILLE.NOM_VILLE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editers", "Edit", new { id = Model.ID_SOCIETE }) |
+    @Html.ActionLink("Back to List", "Index", "Home")
+</p>

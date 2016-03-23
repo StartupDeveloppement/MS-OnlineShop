@@ -1,0 +1,75 @@
+﻿@model IEnumerable<IShop.PAIEMENT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUMERO_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODE_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_TITULAIRE_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRENOM_TITULAIRE_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_VALIDITE_CARTE_PAIEMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADR_FACTURATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUMERO_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_TITULAIRE_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRENOM_TITULAIRE_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_VALIDITE_CARTE_PAIEMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADR_FACTURATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UTILISATEUR.NOM_UTILISATEUR)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PAIEMENT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PAIEMENT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PAIEMENT })
+        </td>
+    </tr>
+}
+
+</table>

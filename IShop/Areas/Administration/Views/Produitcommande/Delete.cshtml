@@ -1,0 +1,48 @@
+﻿@model IShop.PRODUIT_COMMANDE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PRODUIT_COMMANDE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ETAT_PRODUIT_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETAT_PRODUIT_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMMANDE.TYPE_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMMANDE.TYPE_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

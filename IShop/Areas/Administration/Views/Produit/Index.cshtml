@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IShop.PRODUIT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LIBELLE_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTCLE_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_MISE_EN_LIGNE_PRODUIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORIE.LIBELLE_CATEGORIE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIBELLE_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTCLE_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_MISE_EN_LIGNE_PRODUIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORIE.LIBELLE_CATEGORIE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PRODUIT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PRODUIT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PRODUIT })
+        </td>
+    </tr>
+}
+
+</table>

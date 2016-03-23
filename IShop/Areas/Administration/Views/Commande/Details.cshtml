@@ -1,0 +1,74 @@
+﻿@model IShop.COMMANDE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COMMANDE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_ESTIME_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_ESTIME_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADR_LIVRAISON_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADR_LIVRAISON_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ETAT_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETAT_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIEU_ACTUEL_COMMANDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIEU_ACTUEL_COMMANDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_COMMANDE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

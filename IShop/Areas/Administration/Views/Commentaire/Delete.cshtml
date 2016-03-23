@@ -1,0 +1,88 @@
+﻿@model IShop.COMMENTAIRE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>COMMENTAIRE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LIBELLE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIBELLE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTENU_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTENU_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_MODIFICATION_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_MODIFICATION_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

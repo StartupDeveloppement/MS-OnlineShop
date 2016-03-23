@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IShop.COMMANDE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_ESTIME_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADR_LIVRAISON_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ETAT_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIEU_ACTUEL_COMMANDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_ESTIME_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADR_LIVRAISON_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ETAT_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIEU_ACTUEL_COMMANDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UTILISATEUR.NOM_UTILISATEUR)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_COMMANDE }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_COMMANDE }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_COMMANDE })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model IShop.COMMENTAIRE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COMMENTAIRE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LIBELLE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIBELLE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTENU_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTENU_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_MODIFICATION_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_MODIFICATION_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTE_COMMENTAIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTE_COMMENTAIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUIT_SOCIETE.ETAT_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOCIETE.LIBELLE_SOCIETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTILISATEUR.NOM_UTILISATEUR)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_COMMENTAIRE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

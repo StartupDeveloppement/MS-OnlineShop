@@ -1,0 +1,49 @@
+﻿@model UTILISATEUR
+@{
+    ViewBag.Title = "S'enregistrer";
+}
+
+<h2>Créer un compte : </h2>
+@using (Html.BeginForm("creerCompte", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.EMAIL_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.EMAIL_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EMAIL_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.MDP_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.MDP_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MDP_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.NOM_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.NOM_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.NOM_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PRENOM_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.PRENOM_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PRENOM_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ADR_UTILISATEUR, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.ADR_UTILISATEUR, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ADR_UTILISATEUR)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Créer le compte" class="btn btn-default"/>
+        </div>
+    </div>
+}
