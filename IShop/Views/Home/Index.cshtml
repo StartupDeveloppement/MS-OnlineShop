@@ -1,0 +1,15 @@
+﻿@model List<IShop.PRODUIT>
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="row">
+    @foreach (PRODUIT produit in Model)
+    {
+    <div class="col-lg-4">
+        <img src="@produit.IMAGE.First().CHEMIN_IMAGE.Trim()" />
+        <p>@Html.ActionLink(@produit.LIBELLE_PRODUIT, "FicheProduit", new { id = produit.ID_PRODUIT })</p>
+    </div>
+    }
+</div>

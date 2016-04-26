@@ -1,0 +1,75 @@
+﻿@model IShop.PRODUIT
+
+@{
+    ViewBag.Title = "Fiche Produit";
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <img src="@Model.IMAGE.First().CHEMIN_IMAGE.Trim()" />
+            <p>@Model.ID_PRODUIT</p>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LIBELLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIBELLE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTIF_TECHNIQUE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTCLE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTCLE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_MISE_EN_LIGNE_PRODUIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_MISE_EN_LIGNE_PRODUIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEGORIE.LIBELLE_CATEGORIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORIE.LIBELLE_CATEGORIE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Ajouter au Panier", "AjoutPanier", new { id = Model.ID_PRODUIT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

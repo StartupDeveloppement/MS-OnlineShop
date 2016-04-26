@@ -1,0 +1,25 @@
+﻿@model List<IShop.PRODUIT>
+@{
+    ViewBag.Title = "Panier";
+}
+
+<br />
+@if(Model == null || Model.Count() == 0)
+{
+    <p>Rien dans votre panier</p>
+}
+else
+{
+    foreach (PRODUIT p in Model)
+    {
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="@p.IMAGE.First().CHEMIN_IMAGE.Trim()" />
+                <p>@p.LIBELLE_PRODUIT</p>
+                <p>@Html.ActionLink("Retirer du panier", "SupprimerPanier", new { id = @p.ID_PRODUIT })</p>
+            </div>
+        </div>
+    }
+}
+        
+
